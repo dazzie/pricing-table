@@ -1,0 +1,130 @@
+.pricing-table {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.header {
+    display: flex;
+    background-color: #e0e0e0; /* Light grey for better distinction */
+    padding: 10px 0;
+}
+
+.row {
+    display: flex;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.row:hover {
+    background-color: #f1f1f1;
+}
+
+.row:nth-child(even) {
+    background-color: #fff;
+}
+
+.cell {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
+}
+
+.cell.selected {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    animation: pop-in 0.3s ease-out;
+}
+
+.cell:first-child {
+    border-left: none;
+    cursor: default;
+}
+
+.header .cell {
+    font-weight: bold;
+    border-left: none;
+    flex-direction: column;
+}
+
+.header .cell h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.header .cell p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.9em;
+    }
+
+    .header,
+    .row {
+        flex-direction: column;
+    }
+
+    .cell {
+        border-left: none;
+        border-top: 1px solid #ddd;
+        width: 100%;
+    }
+
+    .cell:first-child {
+        border-top: none;
+        cursor: default;
+    }
+
+    .header .cell {
+        padding: 10px 0;
+    }
+
+    .header .cell h2 {
+        font-size: 1.5em;
+    }
+
+    .header .cell p {
+        font-size: 1.2em;
+    }
+}
